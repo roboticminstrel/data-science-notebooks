@@ -1,10 +1,11 @@
 # Education at Digipen
 
-During the four years I was at Digipen, I did a large number of interesting projects that have unfortunately been lost to time. I'll start with the two projects I still have video evidence of. 
+Here is a brief tour of some of my projects from my time at Digipen.
 
 ## FFT Water:
 
-![alt text](https://github.com/roboticminstrel/data-science-notebooks/blob/master/Digipen/img/water-simulation.png)
+<img src='https://github.com/roboticminstrel/data-science-notebooks/blob/master/Digipen/img/water-simulation.png' width='600' height='450'>
+
 
 <a href='https://www.youtube.com/watch?v=KmKxEwAD2uk'>Video of my water simulation</a>
 
