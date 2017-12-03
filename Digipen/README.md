@@ -4,6 +4,8 @@ During the four years I was at Digipen, I did a large number of interesting proj
 
 ## FFT Water:
 
+![alt text](https://github.com/roboticminstrel/data-science-notebooks/blob/master/Digipen/img/water-simulation.png)
+
 <a href='https://www.youtube.com/watch?v=KmKxEwAD2uk'>Video of my water simulation</a>
 
 Implementation: This algorithm is built off the same simulation used in the movie Titanic. The basic idea is fairly simple. Generate a 2^x by 2^x grid of points, these points are the triangle field defining the topography of the water. The 2^x constraint means we can use an FFT to take the n x n point representation of the two dimensional wave into the vector space of n x n waves. There's an equation from oceanography observations that shows the expected wave height and propogation speed based on wind speed and direction, and a given wave's direction and magnitude. The equation I used is:
