@@ -32,3 +32,20 @@ While I did this project during my time at Digipen, it wasn't part of a class, a
 This project more than any other showcases my ability to engage with complex technical challenges I haven't been formally prepared for. 
 
 ## Solid body physics simulation with stable stacking
+<img src='https://github.com/roboticminstrel/data-science-notebooks/blob/master/Digipen/img/physics-simulation.png' width='600' height='450'>
+
+
+<a href='https://www.youtube.com/watch?v=_UsPEd9q3m8'>Video of my water simulation</a>
+
+Implementation: This project was an implementation of the contact graph described in <a href="http://physbam.stanford.edu/~fedkiw/papers/stanford2003-01.pdf">Guendelman, E., Bridson, R. and Fedkiw, R., "Nonconvex Rigid Bodies with Stacking", SIGGRAPH 2003, ACM TOG 22, 871-878 (2003)</a>. The physics engine I built with this project handles collision, contact, friction, and stacking for simple convex objects (cubes, and other simple convex primitives). 
+
+Most of the simulation relies on fairly typical equations for finding collision, updating position and velocity, and handling numerical stability issues at a discrete and variable timestep. The one complicated part of the project revolves around functional stacking. Normally, when two objects are found to penetrate, you update position and velocity to keep objects from overlapping each other. The problem comes when you have multiple moving objects in the same scene. If you have 3 objects overlapping, if you update them in the wrong order you won't converge to a stable and physically believable state. 
+
+The solution is basically just to spatially sort objects in the scene, and propogate from the bottom up. Some extra complexity can arise from edge cases with interlocking primitives in more complex arrangements, additional details are in the above paper. 
+
+## Additional Projects:
+Every year, we had a collaborative year-long game project working in teams of 3~6. These projects were very useful for learning version control, agile development in a collaborative setting, and how to approach software architecture issues when working with a code base in the 10's of thousands of lines. 
+
+I also implemented a full software 3D rendering system, taking 3D meshes from world space, performing view thrustum culling, transforming into view space, and then rastorizing the triangles directly to the screen. I implemented a software raytracer handling reflections, and a binary partitioning tree for doing back to front rasterizing without having to use the depth buffer. Most of these are far slower than just using the DirectX or OpenGL implementation, but it was invaluable for getting an in depth understanding of the rendering pipeline, and learning to think of optimizations when working on computationally intense problems. 
+
+One last project of note, was writing a very simple gameboy game in assembly. That was my introduction to assembly language, before learning X86 assembly for occasional inner loop optimization in my C++ projects. 
