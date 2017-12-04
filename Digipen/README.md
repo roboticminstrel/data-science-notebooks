@@ -23,6 +23,21 @@ For rendering, it's also very helpful to have an equation for surface normals, f
 
 <img src="https://latex.codecogs.com/gif.latex?\nabla&space;h(X,t)&space;=&space;\sum_KiK\tilde&space;h(K,t)e^{iK&space;\cdot&space;X}" title="\nabla h(X,t) = \sum_KiK\tilde h(K,t)e^{iK \cdot X}" />
 
+to generate the starting wave amplitudes:
+
+<img src="https://latex.codecogs.com/gif.latex?\tilde&space;h_0(K)&space;=&space;\frac{1}{\sqrt&space;2)}(\xi_r&space;&plus;&space;i\xi_i)\sqrt{P_h(K)}" title="\tilde h_0(K) = \frac{1}{\sqrt 2)}(\xi_r + i\xi_i)\sqrt{P_h(K)}" />
+
+where xr and xi are two independant draws from a gaussian random number generator, with mean 0 and std 1. From there, to propogate the waves forward in time: 
+
+<img src="https://latex.codecogs.com/gif.latex?\tilde&space;h(K,t)&space;=&space;\tilde&space;h_0(K)e^{i\omega(K)t}&space;&plus;&space;\tilde&space;h_0^*(-K)e^{i\omega(K)t}" title="\tilde h(K,t) = \tilde h_0(K)e^{i\omega(K)t} + \tilde h_0^*(-K)e^{i\omega(K)t}" />
+
+where omega is the angular frequency of wave k, representing the speed the wave travels across the surface, and h* is the complex conjugate of h(K), so our output wave height field is a real value only. 
+
+The last piece, is for calculating omega:
+<img src="https://latex.codecogs.com/gif.latex?\omega^2(K)&space;=&space;gk" title="\omega^2(K) = gk" />
+
+where g is the gravitational constant, and k is the magnitude of wave vector K.
+
 I chose to use a size of 2^10 (1024 x 1024) for my simulation. I implemented the FFT from scratch. While profiling, I learned that the big bottleneck was passing the data from the CPU to the GPU every frame. It still ran comfortably in real time, but given some of the capabilities of modern versions DirectX, if I were to do this project again, I would just implement the whole thing directly on the GPU. The entire project was done with C++ with DirectX 8.0.
 
 You can read the rest of the implementation details for the project from the article I got the idea from, <a href='https://www.gamasutra.com/view/feature/131445/deep_water_animation_and_rendering.php'>here</a>. 
