@@ -15,13 +15,15 @@ Implementation: This algorithm is built off the same simulation used in the movi
 
 where K is the wave vector, W is the wind vector, k is the wave vector's magnitude, l = v^2/g is the largest wave that can arise at wind speed v at gravity g, and a is a global constant governing wave height. The last e factor is for eliminating waves with small wavelength to improve convergence. 
 
-From there, all you need is a fast fourier transform to get the height field from the wave field:
+You can get the height field from the wave field like this:
 
 <img src="https://latex.codecogs.com/gif.latex?h(X,t)&space;=&space;\sum_K\tilde&space;h(K,t)e^{iK\cdot&space;X}" title="h(X,t) = \sum_K\tilde h(K,t)e^{iK\cdot X}" />
 
 For rendering, it's also very helpful to have an equation for surface normals, for lighting, surface reflection, and so on. The equation for the surface normals can be obtained from the gradient of the above equation:
 
 <img src="https://latex.codecogs.com/gif.latex?\nabla&space;h(X,t)&space;=&space;\sum_KiK\tilde&space;h(K,t)e^{iK&space;\cdot&space;X}" title="\nabla h(X,t) = \sum_KiK\tilde h(K,t)e^{iK \cdot X}" />
+
+so the final simulation actually involves performing two FFTs per frame.
 
 to generate the starting wave amplitudes:
 
@@ -63,4 +65,4 @@ Every year, we had a collaborative year-long game project working in teams of 3~
 
 I also implemented a full software 3D rendering system, taking 3D meshes from world space, performing view thrustum culling, transforming into screen space, and then rastorizing the triangles directly to the screen. I implemented a software raytracer handling reflections, and a binary partitioning tree for doing back to front rasterizing without having to use the depth buffer. These CPU implementations were obviously far slower than just using the DirectX or OpenGL GPU hardware implementation, but it was invaluable for getting an in depth understanding of the rendering pipeline, and learning to think of optimizations when working on computationally intense problems. 
 
-One last project of note, was writing a very simple gameboy game in assembly. That was my introduction to assembly language, before learning X86 assembly for occasional inner loop optimization in my C++ projects. 
+One last project of note, was writing a very simple gameboy game in assembly. That was my introduction to assembly language, before learning x86 assembly for occasional inner loop optimization in my C++ projects. 
