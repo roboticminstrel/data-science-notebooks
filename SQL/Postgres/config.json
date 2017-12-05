@@ -1,0 +1,6 @@
+{
+  "database": "exercises",
+  "user": "james",
+  "passw": "fakepass",
+  "host": "localhost"
+}
