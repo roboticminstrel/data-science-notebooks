@@ -1,10 +1,11 @@
 # data-science-notebooks
 
-# Kaggle
-### [cats vs dogs classifier](https://github.com/roboticminstrel/data-science-notebooks/tree/master/kaggle/dog-cat-classifier)
-This is my first project using Keras, and AWS. I learned a lot from this one, and ended up with a neural net with a 97% accuracy at distinguishing cats from dogs. 
-
 ## Index
+
+### [Kaggle](https://github.com/roboticminstrel/data-science-notebooks/tree/master/kaggle/dog-cat-classifier)
+I've submitted to my first Kaggle competition. This is my first project using Keras, and AWS. I learned a lot from this one, and ended up with a neural net with a 97% accuracy at distinguishing cats from dogs. 
+
+
 ### <a href='https://github.com/roboticminstrel/data-science-notebooks/tree/master/Digipen'>Digipen</a>
 This is a brief overview of the projects I completed during my time at the Digipen Institute of Technology.
 
