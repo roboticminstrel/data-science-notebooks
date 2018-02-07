@@ -1,6 +1,6 @@
 
 # Cats vs Dogs classifier from finetuning VGG using AWS
-This is my personal project for week1 of the fast.ai online course. The helper files (utils.py, vgg16.py) are from the course, and were not written by me.
+This is my personal project for week1 of the fast.ai online course. The helper files (utils.py, vgg16.py) are from the course, and were not written by me. I used Keras, with a pretrained convolutional neural net.
 
 This is my first project using AWS. I'm using a p2.xlarge EC2 instance for final training (GPU accelerated) and a t.large EC2 instance for initial coding and testing. I figured out how to have a single EBS storage volume shared between the two instances, so I could easily do the work without incurring any more costs than necessary. I set up some aliases in bash to help keep my workflow simple. I've included the bash code in the notebook as well.
 
